@@ -1,0 +1,15 @@
+{
+    "name": "@repo/store",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "recoil": "^0.7.7"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "exports": {
+        "./useBalance": "./src/hooks/useBalance.ts"
+    }
+}
