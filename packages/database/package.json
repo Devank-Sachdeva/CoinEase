@@ -2,7 +2,7 @@
     "name": "@repo/database",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/index.js",
     "exports": {
         "./client": "./src/index.ts"
     },
@@ -14,7 +14,8 @@
     "license": "ISC",
     "devDependencies": {
         "@types/node": "^20.12.11",
-        "prisma": "^5.13.0"
+        "prisma": "^5.13.0",
+        "tsup": "^8.0.2"
     },
     "dependencies": {
         "@prisma/client": "5.13.0"

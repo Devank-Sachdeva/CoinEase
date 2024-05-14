@@ -42,5 +42,11 @@ app.post("/hdfcwebhook", async (req, res) => {
 		res.status(418).json({ error: "Error while processing webhook" });
 	}
 });
+app.get("/", (req,res)=> {
+    res.send("Hello World")
+})
+app.get("/new1", (req,res)=> {
+    res.send("Hello World")
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
