@@ -4,20 +4,26 @@
     "description": "",
     "main": "dist/index.js",
     "exports": {
-        "./client": "./src/index.ts"
+        "./client": "./src/index.ts",
+        "./types": "./src/types.ts"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "prisma": {
+        "seed": "tsup prisma/seed.ts"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@types/bcrypt": "^5.0.2",
         "@types/node": "^20.12.11",
         "prisma": "^5.13.0",
         "tsup": "^8.0.2"
     },
     "dependencies": {
+        "bcrypt": "^5.1.1",
         "@prisma/client": "5.13.0"
     }
 }

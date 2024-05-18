@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client"
+import {  PrismaClient } from "@prisma/client"
 // const PrismaClient = require("@prisma/client").PrismaClient
 
 const prismaClientSingleton = () => {
@@ -16,3 +16,4 @@ export default prisma
 if (process.env.NODE_ENV !== "production"){
     globalThis.prismaGlobal = prisma
 }
+
