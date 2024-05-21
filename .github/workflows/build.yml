@@ -21,7 +21,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Generate Prisma
-        run: pnpm dlx run db:generate
+        run: pnpm run db:generate
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
