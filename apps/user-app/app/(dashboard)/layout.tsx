@@ -10,6 +10,7 @@ export default function Layout({children} : {
                 <SidebarItem route="/dashboard" title="Home" icon={<HomeIcon />} />
                 <SidebarItem route="/transactions" title="Transactions" icon={<TransactionsIcon />} />
                 <SidebarItem route="/transfer" title="Transfers" icon={<TransferIcon />} />
+                <SidebarItem route="/p2p" title="P2P Transactions" icon={<TransferIcon />} />
             </div>
         </div>
         {children}

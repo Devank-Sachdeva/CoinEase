@@ -3,7 +3,7 @@ interface CardProps {
   children: React.ReactNode;
 }
 
-export default function ({title, children} : CardProps){
+export function Card({title, children} : CardProps){
   return <div className="bg rounded-lg p-4 bg-slate-100/50">
     <div className="text-xl border-b p-2">
       {title}

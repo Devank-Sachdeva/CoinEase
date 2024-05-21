@@ -27,7 +27,10 @@ export const authOptions : AuthOptions = {
                 );
                 const dbUser = await prisma.user.findFirst({
                     where: {
-                        email: user.data.username,
+                        OR: [
+                            { email: user.data.username },
+                            { number: user.data.username },
+                        ]
                     },
                 });
 
@@ -47,21 +50,32 @@ export const authOptions : AuthOptions = {
                 }
 
                 try {
-                    const newUser = await prisma.user.create({
-                        data: {
-                            email: user.data.username,
-                            password: hashedPassword,
-                            number: String(
-                                Math.floor(Math.random() * 10000000000)
-                            ),
-                        },
-                    });
+                    prisma.$transaction(async (tx) => {
+                        const newUser = await tx.user.create({
+                            data: {
+                                email: user.data.username,
+                                password: hashedPassword,
+                                number: String(
+                                    Math.floor(Math.random() * 10000000000)
+                                )
+                            },
+                        });
 
-                    return {
-                        id: newUser.id.toString(),
-                        email: newUser.email,
-                        name: newUser.name,
-                    };
+                        await tx.balance.create({
+                            data: {
+                                amount: 0,
+                                userId: newUser.id,
+                                locked: 0
+                            },
+                        
+                        })
+    
+                        return {
+                            id: newUser.id.toString(),
+                            email: newUser.email,
+                            name: newUser.name,
+                        };
+                    })
                 } catch (e) {
                     console.log(e);
                 }

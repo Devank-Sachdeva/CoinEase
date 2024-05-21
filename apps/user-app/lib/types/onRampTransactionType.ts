@@ -8,4 +8,4 @@ interface OnRampTransactionProps {
     startTime: Date,
 }
 
-export type { OnRampTransactionProps }
+export type { OnRampTransactionProps, OnRampStatus }

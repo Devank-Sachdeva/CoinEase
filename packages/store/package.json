@@ -10,6 +10,7 @@
     "author": "",
     "license": "ISC",
     "exports": {
-        "./useBalance": "./src/hooks/useBalance.ts"
+        "./useBalance": "./src/hooks/useBalance.ts",
+        "./useTransactions": "./src/hooks/useTransactions.ts"
     }
 }
