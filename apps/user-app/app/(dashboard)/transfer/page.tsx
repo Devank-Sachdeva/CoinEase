@@ -4,7 +4,7 @@ import { OnRampTransaction } from "@/components/OnRampTransaction";
 import getBalance from "@/lib/actions/getBalance";
 import getOnRampTransactions from "@/lib/actions/getOnRampTxn";
 
-export default async function(){
+export default async function Transfer(){
     const transactions = await getOnRampTransactions();
     const balance = await getBalance();
     return (

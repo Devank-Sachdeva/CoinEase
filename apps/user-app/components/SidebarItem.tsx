@@ -8,7 +8,7 @@ interface SideBarProps {
     icon: React.ReactNode;
 }
 
-export default function ({route, title, icon} : SideBarProps){
+export default function SideBar ({route, title, icon} : SideBarProps){
 
     const router = useRouter();
     const pathname = usePathname();

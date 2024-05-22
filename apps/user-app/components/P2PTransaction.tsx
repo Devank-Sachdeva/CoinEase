@@ -17,7 +17,7 @@ export default function P2PTransaction({ userId }: { userId: number }) {
         getTransactions().then((res) => {
             setTransactions(res ?? [])
         });
-    }, [])
+    }, [setTransactions])
 
     return (
         <div className="p-5">

@@ -1,0 +1,21 @@
+FROM node:20.12.0-alpine3.19
+RUN corepack enable pnpm
+RUN corepack prepare pnpm@8.9.0 --activate
+
+
+WORKDIR /usr/src/app
+
+COPY package.json turbo.json tsconfig.json pnpm-workspace.yaml pnpm-lock.yaml ./
+
+COPY apps ./apps
+COPY packages ./packages
+
+# Install dependencies
+RUN pnpm install
+# Can you add a script to the global package.json that does this?
+RUN cd packages/database && pnpm dlx prisma generate && cd ../..
+
+# Can you filter the build down to just one app?
+RUN pnpm run build-user-app
+EXPOSE 3000
+CMD ["pnpm", "run", "start-user-app"]

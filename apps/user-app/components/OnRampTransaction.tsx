@@ -15,7 +15,7 @@ export const OnRampTransaction = ( {transactions} :  {transactions : OnRampTrans
     return (
         <Card title="Recent Transactions">
             <div className="pb-2">
-                {transactions.map(t => <div className="flex justify-between">
+                {transactions.map(t => <div className="flex justify-between" key={t.id}>
                     <div className="pt-2">
                         <div className={`text-sm ${t.status == "Success" ? "text-green-500" : t.status == "Pending" ? "text-amber-500" : "text-red-600"}`}>
                             Received INR

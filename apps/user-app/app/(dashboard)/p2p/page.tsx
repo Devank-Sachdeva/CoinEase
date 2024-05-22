@@ -6,7 +6,7 @@ import { authOptions } from "@/lib/helpers/auth";
 import P2PTransaction from "@/components/P2PTransaction";
 import { useTransactions } from "@repo/store/useTransactions"
 
-export default async function () {
+export default async function P2P() {
 	const users = await getUser();
 	// getTransactions().then((res) => {
 	// 	useTransactions().setTransactions(res ?? []);
